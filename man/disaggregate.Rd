@@ -18,6 +18,7 @@ A data frame containing SWATH data.
 }
 \value{Returns a data frame containing the SWATH data in a transition-level table.}
 
+\note{This function works for maximal 6 transitions per precursor, from version 1.1.1 SWATH2stats::disaggregate can also transform data with more than 6 transitions per precursor. }
 \author{
 Peter Blattmann
 }
@@ -25,6 +26,6 @@ Peter Blattmann
 data("OpenSWATH_data", package="SWATH2stats")
 data("Study_design", package="SWATH2stats")
 data <- sample_annotation(OpenSWATH_data, Study_design)
-data.filtered.decoy <- filter_mscore(data, 0.01) 
+data.filtered.decoy <- filter_mscore(data, 0.01)
 raw <- disaggregate(data.filtered.decoy)
 }
