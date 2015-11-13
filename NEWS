@@ -1,3 +1,15 @@
 VERSION 0.99.5
 -------------------------
 Package accepted to Bioconductor
+
+VERSION 1.0.0
+-------------------------
+First stable release of SWATH2stats
+
+VERSION 1.0.1
+-------------------------
+Added comment to function disaggregate to make aware that in this version it only handles 6 transitions per precursor, from 1.1.1 it handles more and different number of transitions
+
+VERSION 1.0.2
+-------------------------
+Buf fix in function assess_fdr_byrun. The function did mix up the order of the runs in some cases and this was fixed.
