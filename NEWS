@@ -13,3 +13,7 @@ Added comment to function disaggregate to make aware that in this version it onl
 VERSION 1.0.2
 -------------------------
 Buf fix in function assess_fdr_byrun. The function did mix up the order of the runs in some cases and this was fixed.
+
+VERSION 1.0.3
+-------------------------
+Correction of typographical error in Vignette for Wolski et al.
