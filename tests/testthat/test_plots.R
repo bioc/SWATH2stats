@@ -50,8 +50,8 @@ test_that("variation plot", {
   mean.test1 <- mean(as.numeric(test1[,c("1","2","3")]))
   mean.test2 <- mean(as.numeric(test2[,c("1","2","3")]))
   
-  expect_true(sd(as.numeric(test1[,c("1","2","3")]))/mean.test1 == as.numeric(test1[,"cv"]))
-  expect_true(sd(as.numeric(test2[,c("1","2","3")]))/mean.test2 == as.numeric(test2[,"cv"]))
+  expect_true(all.equal(sd(as.numeric(test1[,c("1","2","3")]))/mean.test1, as.numeric(test1[,"cv"])))
+  expect_true(all.equal(sd(as.numeric(test2[,c("1","2","3")]))/mean.test2, as.numeric(test2[,"cv"])))
 })
 
 
@@ -82,8 +82,8 @@ test_that("variation plot vs total", {
   cv.val1.rep <- sd(val1.rep)/mean(val1.rep)
   cv.val2.rep <- sd(val2.rep)/mean(val2.rep)
   
-  expect_true(cv.val1.total == as.numeric(test1.total[,"cv"]))
-  expect_true(cv.val2.total == as.numeric(test2.total[,"cv"]))
-  expect_true(cv.val1.rep == as.numeric(test1.rep[,"cv"]))
-  expect_true(cv.val2.rep == as.numeric(test2.rep[,"cv"]))
+  expect_true(all.equal(cv.val1.total, as.numeric(test1.total[,"cv"])))
+  expect_true(all.equal(cv.val2.total, as.numeric(test2.total[,"cv"])))
+  expect_true(all.equal(cv.val1.rep, as.numeric(test1.rep[,"cv"])))
+  expect_true(all.equal(cv.val2.rep, as.numeric(test2.rep[,"cv"])))
 })
