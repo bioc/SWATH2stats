@@ -30,10 +30,10 @@ test_that("data conversion", {
   expect_that(dim(data.min), equals(c(918,62)))
 
   data.python <- convert4pythonscript(data.max)
-  expect_that(identical(grep("UniMod\\:", data.max[,"aggr_Fragment_Annotation"]), grep("UniMod\\_", data.python[,"aggr_Fragment_Annotation"])), is_true())
-  expect_that(identical(grep("UniMod\\:", data.max[,"aggr_Fragment_Annotation"]), grep("UniMod\\_", data.max[,"aggr_Fragment_Annotation"])), is_false())
-  expect_that(identical(grep("UniMod\\:", data.max[,"FullPeptideName"]), grep("UniMod\\_", data.python[,"FullPeptideName"])), is_true())
-  expect_that(identical(grep("UniMod\\:", data.max[,"FullPeptideName"]), grep("UniMod\\_", data.max[,"FullPeptideName"])), is_false())
+  expect_true(identical(grep("UniMod\\:", data.max[,"aggr_Fragment_Annotation"]), grep("UniMod\\_", data.python[,"aggr_Fragment_Annotation"])))
+  expect_false(identical(grep("UniMod\\:", data.max[,"aggr_Fragment_Annotation"]), grep("UniMod\\_", data.max[,"aggr_Fragment_Annotation"])))
+  expect_true(identical(grep("UniMod\\:", data.max[,"FullPeptideName"]), grep("UniMod\\_", data.python[,"FullPeptideName"])))
+  expect_false(identical(grep("UniMod\\:", data.max[,"FullPeptideName"]), grep("UniMod\\_", data.max[,"FullPeptideName"])))
 
   raw <- disaggregate(data.max)
   expect_true(subset(raw, FragmentIon == "1069078_FIIDPAAVITGR_2" & Run == 6)[,"Intensity"] == 188569)
