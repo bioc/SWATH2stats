@@ -1,7 +1,7 @@
 Package: SWATH2stats
 Type: Package
 Title: Transform and Filter SWATH Data for Statistical Packages
-Version: 1.42.0
+Version: 1.43.0
 Date: 2025-12-17
 Authors@R: c(person("Peter", "Blattmann", role = c("aut", "cre"),
                     email="peter_blattmann@bluewin.ch",
